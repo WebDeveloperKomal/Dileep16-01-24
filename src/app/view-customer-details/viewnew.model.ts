@@ -30,6 +30,7 @@ export class ViewCustomerdetailModelNew{
         address: any;
         telephone: any;
         branchCode: any;
+        branchId: any;
         mTelephone: any;
         name: any;
         aof: any

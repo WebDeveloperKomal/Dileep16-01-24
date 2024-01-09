@@ -1,5 +1,5 @@
-export class VoucherModel{
-    voucherId: any
+export class UpdateVoucherModel{
+    id: any
     amount :any;
     paymentDate :any;
     paymentMode :any;
@@ -7,5 +7,4 @@ export class VoucherModel{
     paidReceipt:any;
     voucherDate: any;
     description : any;
-    receiptImage : any;
 }

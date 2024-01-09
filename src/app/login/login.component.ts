@@ -27,6 +27,9 @@ export class LoginComponent {
       (response :any) => 
       {
         localStorage.setItem('token',response.jwtToken);
+        // localStorage.setItem('loginStatus','1');
+        // localStorage.setItem('token',response.jwtToken);
+        // localStorage.setItem('token',response.jwtToken);
         this.router.navigate(["set/"]); 
         const Toast = Swal.mixin({
           toast: true,
@@ -43,7 +46,8 @@ export class LoginComponent {
           icon: "success",
           title: "Signed in successfully"
         }); 
-      },
+      }
+      ,
       error => {console.error(error);
         Swal.fire({
           title: "Invalid Credentials!",

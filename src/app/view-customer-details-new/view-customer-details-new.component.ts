@@ -424,7 +424,7 @@ ngOnInit(){
  this.apiService.getProfile(this.id).subscribe(
    (response: any) => {
      this.ProfileList = response.data;
-     console.log("ProfileList***************", response.data);
+    //  console.log("ProfileList***************", response.data);
      localStorage.setItem('tidprofile', response.data.tid)
    },
    (error: any) => { console.error(error); }
@@ -688,8 +688,8 @@ getproductdetails(accountno:any){
  
   this.apiService.getProductSer(this.accountNo).subscribe(
     (res:any)=>{
-      this.customeraccountdetails =res.data
-//  console.log("dataaaa", res.data);
+      this.customeraccountdetails =res.data ;
+ console.log("dataaaaSO**********", res.data);
  // this.getproddetails = res.data ;
  
     },
@@ -1028,4 +1028,24 @@ updateProfile() {
 //     }
 //   )
 // }
+
+// billing
+getbilling(InvoiceId:any){
+
+  // this.accountNo = this.route.snapshot.params['accountNo']; 
+this.apiService.getbillingmain(1000).subscribe(
+(res:any)=>{
+  this.taxplanningdetails =res.data;
+  // localStorage.setItem("followupId", res.data.followupId);
+  // localStorage.setItem("followupId", this.customerinteractiondetailsobj.followupId);
+console.log("GetBillingdetails********", res.data);
+// this.getproddetails = res.data ;
+
+},
+(error:any)=>{console.error(error);
+}
+)
+
+
+}
 }
