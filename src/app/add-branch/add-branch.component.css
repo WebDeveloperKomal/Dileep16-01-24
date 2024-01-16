@@ -1,18 +1,16 @@
-/* *{
-    font-family: system-ui, sans-serif;
-} */
 .page-header {
-    margin: 0 0 12px;
+    /* margin: 0 0 12px;
     border-bottom: 1px dotted #E2E2E2;
     padding-bottom: 16px;
-    padding-top: 7px
+    padding-top: 7px */
+    display: flex;
 }
 
 .page-header h1 {
     margin: 0 8px;
     font-size: 24px;
-    font-weight: lighter;
-    color: #2679B5
+    font-weight: bold;
+    color:  #004c8c;
 }
 
 .page-header h1 small {
@@ -42,19 +40,20 @@
 .breadcrumb a {
     text-decoration: none;
 }
-form{
-    font-size: 12px;
-}
+
 label{
-    color: #393939;
-    font-weight: 400;
-    font-size: 14px;
-    /* font-weight: 00; */
-    /* font: 14px 'Open Sans'; */
+    color: #004c8c!important;
+    font-weight: 600;
+    width: auto;
+    left: 15px;
 }
+input{
+    font-size: small;
+}
+
 .btn-info, .btn-info.focus, .btn-info:focus {
-    background-color: #003974!important;
-    border-color: #003974;
+    background-color: #004c8c!important;
+    border-color: #004c8c;
 }
 .btn {
     color: #FFF!important;
@@ -93,37 +92,22 @@ label{
     white-space: nowrap;
     padding: 6px 12px;
     font-size: 14px;
-    /* line-height: 1.42857143; */
-    /* border-radius: 4px; */
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
 }
 
-/* .btn, .btn-default, .btn-default.focus, .btn-default:focus, .btn.focus, .btn:focus {
-    background-color: #ABBAC3!important;
-    border-color: #ABBAC3;
-} */
 .canc{
     background-color: #ABBAC3!important;
     border-color: #ABBAC3;
 }
 
 
-.form-control , .form-select {
-    font-weight: 400;
-    font-size: 13px; 
-    /* line-height: 1; */
-}
-
-
 .form-select option {
     margin: 15px; /* Adjust the margin as needed to increase the spacing between options */
     padding: 5px; /* Adjust the padding as needed to increase the spacing between options */
-    /* height: 46px;
-    line-height: 1.3333333  ;
-    padding: 6px 12px; */
+
 }
 
 /* Increase the text size for select fields */
@@ -133,16 +117,9 @@ label{
 }
 
 
-
-/* .btn-info,.btn-info.focus,.btn-info:focus {
-    background-color: #003974!important;
-    border-color: #003974
-} */
-
 .btn-info:hover,.btn-info:active:hover,.btn-info:focus:active,.btn-info:focus:hover,.btn-info:hover,.open>.btn-info.dropdown-toggle,.open>.btn-info.dropdown-toggle.focus,.open>.btn-info.dropdown-toggle:active,.open>.btn-info.dropdown-toggle:focus,.open>.btn-info.dropdown-toggle:hover {
     background-color: #4F99C6!important;
-    border-color: #003974;
-    border: 5px solid #003974 ;
+
 
 }
 
@@ -151,7 +128,7 @@ label{
 } */
 
 /* .btn-info.no-hover:active,.btn-info.no-hover:hover {
-    background-color: #003974!important
+    background-color: #004c8c!important
 } */
 
 /* .btn-info.active,.btn-info.active:focus,.btn-info.active:hover,.btn-info.focus.active,.open>.btn-info.dropdown-toggle.active {
@@ -165,8 +142,8 @@ label{
 } */
 /* 
 .btn-info.disabled,.btn-info.disabled.active,.btn-info.disabled:active,.btn-info.disabled:focus,.btn-info.disabled:hover,.btn-info[disabled],.btn-info[disabled].active,.btn-info[disabled]:active,.btn-info[disabled]:focus,.btn-info[disabled]:hover,fieldset[disabled] .btn-info,fieldset[disabled] .btn-info.active,fieldset[disabled] .btn-info:active,fieldset[disabled] .btn-info:focus,fieldset[disabled] .btn-info:hover {
-    background-color: #003974!important;
-    border-color: #003974
+    background-color: #004c8c!important;
+    border-color: #004c8c
 } */
 /* 
 font-size: 14px;

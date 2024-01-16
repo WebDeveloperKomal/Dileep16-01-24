@@ -1,104 +1,81 @@
-<div class="container-fluid">
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-white">
+      <li class="fw-bold">&#160;&#160;
+        <i class="fa-solid fa-house-chimney" style="margin-right: 10px; color: black;"></i><a href="/set/">Home&#160;</a>
+        <i class="fa-solid fa-chevron-right"></i>
+      </li>
+      <li class="fw-bold"><a href="">&#160;Settings&#160;</a>
+        <i class="fa-solid fa-chevron-right"></i>
+      </li>
+      <li class="active fw-bold" style="color: #3BB161;" aria-current="page">&#160;Compliance</li>
+    </ol>
+  </nav>
+<div class="container">
     <div class="row">
-        <div class="col">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                        <i class="ace-icon fa fa-home home-icon " style="margin-right: 10px;"></i><a href="#">Home</a>
-                    </li>
-                    <li class="breadcrumb-item"><a href="#">Settings</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Branch</li>
-                </ol>
-            </nav>
+        <div class="col pt-1">
             <div class="container ">
                 <div class="row">
                     <div class="col">
                         <div class="page-header">
-                            <h1>
-                                Compliance
-                            </h1>
+                            <div class="col text-start">
+                                <h1>
+                                    Compliance
+                                </h1>
+                            </div>
+                            <button type="button" routerLink="/set/compliance" class="btn-info px-3"
+                                style="float: right; border-radius: 2rem; ">View
+                                Compliance</button>
                         </div>
                     </div>
                 </div>
-                <button type="button" routerLink="/set/compliance" class="btn btn-info" style="float: right;">View
-                    Compliance</button>
             </div>
 
-            <form [formGroup]="complianceForm" (ngSubmit)="onSubmit()" class="col-md-12 col-sm-12 col-xs-12 mt-5">
-
+            <form [formGroup]="complianceForm" (ngSubmit)="onSubmit()"
+                class="col-md-12 col-sm-12 col-xs-12 mt-3 rounded-3 border p-5 bg-white ">
 
                 <div class="form-group row mb-3">
-                    <label for="complianceName" class="col-lg-2 col-4   col-form-label mr-5">Compliance Name:</label>
-                    <div class="col-lg-4 col-8">
-                        <input type="text" formControlName="complianceName" [(ngModel)]="compliance.complianceName" class="form-control" id="complianceName">
+                    <div class="form-floating col-lg-6 col-12 mb-3">
+                        <input type="text" formControlName="complianceName" [(ngModel)]="compliance.complianceName"
+                            class="form-control border-secondary px-3  rounded-3" id="complianceName"
+                            placeholder="complianceName">
+                        <label for="complianceName" class="col-lg-2 col-4   col-form-label mr-5">Compliance
+                            Name</label>
                     </div>
-                    <label for="taxLink" class="col-lg-1 col-4 col-form-label ml-2" >Tax Link  :</label>
-                    <div class="col-lg-4 col-8">
-                        <select formControlName="taxLink" [(ngModel)]="compliance.taxLink" class="form-control select">
+                    <div class="form-floating col-lg-6 col-12 mb-3">
+                        <select formControlName="taxLink" [(ngModel)]="compliance.taxLink"
+                            class="form-control select border-secondary px-3  rounded-3">
                             <option value="None" selected>None</option>
                             <option *ngFor="let tax of taxData" [value]="tax.taxTypeName">{{ tax.taxTypeName }}
                             </option>
                         </select>
+                        <label for="taxLink" class="col-lg-1 col-4 col-form-label ml-2">Tax Link</label>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <label for="complianceDueDate" class="col-lg-2 col-4 col-form-label">Compliance Due Date:</label>
-                    <div class="col-lg-4 col-8">
-                        <input type="date" formControlName="complianceDueDate" [(ngModel)]="compliance.complianceDueDate" class="form-control"
-                            id="complianceDueDate">
+                    <div class="form-floating col-lg-6 col-12 mb-3">
+                        <input type="date" formControlName="complianceDueDate" placeholder="complianceDueDate"
+                            [(ngModel)]="compliance.complianceDueDate"
+                            class="form-control border-secondary px-3  rounded-3" id="complianceDueDate">
+                        <label for="complianceDueDate" class="col-lg-2 col-4 col-form-label">Compliance Due
+                            Date</label>
+
                     </div>
                 </div>
 
-                <div class="text-center mt-5">
-                    <!-- <div class="col-sm-offset-3 col-md-9"> -->
-                        <button type="submit" class="btn btn-info  m-lg-4 m-4" ><i class="ace-icon fa fa-check bigger-110"></i>
+                <div class="row text-center mt-3">
+                    <div class=" col-md-6">
+                        <button type="submit" class="btn btn-info  m-lg-6 m-3 w-50" style="border-radius: 2rem;"><i
+                                class="ace-icon fa fa-check bigger-110"></i>
                             Submit</button>
-                         <button type="button" class="btn canc m-lg-4 m-4" (click)="reset()">
-                              <i class="ace-icon fa fa-undo bigger-110"></i>
-                              Reset
-                          </button>
-                    <!-- </div> -->
-        
-        
-                    <!-- <div class="text-end">
-                      <button type="button" class="btn btn-info m-lg-3 m-4"><i class="ace-icon fa fa-check bigger-110"></i> Submit</button>
-                      <button type="button" class="btn canc m-lg-3 m-4"><i class="ace-icon fa fa-undo bigger-110"></i> Reset</button>
-                  </div> -->
-        
+                    </div>
+                    <div class=" col-md-6">
+                        <button type="button" class="btn canc m-lg-6 m-3 w-50" (click)="reset()"
+                            style="border-radius: 2rem;">
+                            <i class="ace-icon fa fa-undo bigger-110"></i>
+                            Reset
+                        </button>
+                    </div>
+
                 </div>
             </form>
         </div>
     </div>
 </div>
-
-
-
-
-<!-- 
-<div class="container-fluid">
-    <div class="row">
-      <div class="col">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb" >
-            <li class="breadcrumb-item">
-              <i class="ace-icon fa fa-home home-icon " style="margin-right: 10px;"></i><a href="#">Home</a>
-            </li>
-            <li class="breadcrumb-item"><a href="#">Settings</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Branch</li>
-          </ol>
-        </nav>
-        <div class="container ">
-          <div class="row">
-            <div class="col">
-              <div class="page-header">
-                <h1>
-                    Compliance
-                </h1>
-              </div>
-                           
-             
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->

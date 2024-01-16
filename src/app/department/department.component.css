@@ -1,19 +1,17 @@
-.container{
-    font-family: system-ui, sans-serif;
-}
+
 .page-header {
-    margin: 0 0 12px;
+    /* margin: 0 0 12px;
     border-bottom: 1px dotted #E2E2E2;
-    padding-bottom: 16px;
-    padding-top: 7px
+    padding-bottom: 16px; 
+    padding-top: 7px*/
+    display: flex;
 }
 
 .page-header h1 {
     margin: 0 8px;
     font-size: 24px;
-    font-weight: lighter;
-    color: #2679B5;
-    font-family: system-ui, sans-serif;
+    font-weight: bold;
+    color: #3BB161;
 }
 
 .page-header h1 small {
@@ -50,21 +48,25 @@
 table {
     border-collapse: collapse;
     border-spacing: 0;
-    background-color: #fff !important;
+    /* background-color: #fff !important; */
     border: 1px solid #ddd !important;
+    border-radius: 5rem;
     background-color: transparent;
     line-height: 1.42857143;
-    background-color: #fff;
-    padding: 5px;
-    padding: 25px;
+    padding: 50px;
     font-size: 14px;
-    font-family: system-ui, sans-serif;
 }
+.table th {
+    color: #004c8c;
+    font-weight: bold;
 
+}
+.table td {
+    color: #004c8c;
+}
 .table td,
 .table th {
-    background-color: #fff !important;
-    font-family: system-ui, sans-serif;
+    /* background-color: #fff !important; */
 }
 
 .table-bordered td,
@@ -73,7 +75,7 @@ table {
 }
 
 .table-striped>tbody>tr:nth-of-type(odd) {
-    background-color: #f9f9f9
+    /* background-color: #f9f9f9 */
 }
 
 .table>tbody>tr>td,
@@ -82,10 +84,10 @@ table {
 .table>tfoot>tr>th,
 .table>thead>tr>td,
 .table>thead>tr>th {
-    padding: 8px;
+    padding: 12px;
     line-height: 1.42857143;
     vertical-align: top;
-    border-top: 1px solid #ddd
+    /* border-top: 1px solid #ddd */
 }
 
 .table>tbody+tbody {
@@ -99,7 +101,7 @@ table {
 .table-bordered>tfoot>tr>th,
 .table-bordered>thead>tr>td,
 .table-bordered>thead>tr>th {
-    border: 1px solid #ddd
+    /* border: 1px solid #ddd */
 }
 
 .table-bordered>thead>tr>td,
@@ -119,9 +121,10 @@ table {
 }
 
 
+
 .btn-info, .btn-info.focus, .btn-info:focus {
-    background-color: #003974!important;
-    border-color: #003974;
+    background-color: #004c8c!important;
+    border-color: #004c8c;
 }
 .btn {
     color: #FFF!important;
@@ -168,7 +171,7 @@ table {
 
 .btn-info:hover {
     background-color: #4F99C6!important;
-    /* border-color: #003974; */
-    border: 5px solid #003974 ;
+    /* border-color: #004c8c; */
+    /* border: 5px solid #004c8c ; */
 
 }

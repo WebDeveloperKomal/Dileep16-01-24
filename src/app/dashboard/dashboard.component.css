@@ -9,7 +9,7 @@ h1 {
     margin: 0 8px;
     font-size: 24px;
     font-weight: lighter;
-    color: #2679B5;
+    color: #3BB161;
 }
 
  h1 small {
@@ -56,8 +56,8 @@ h1 {
 
 
 .btn-info, .btn-info.focus, .btn-info:focus {
-    background-color: #003974!important;
-    border-color: #003974;
+    background-color: #004c8c!important;
+    border-color: #004c8c;
 }
 .btn {
     color: #FFF!important;
@@ -195,13 +195,13 @@ h1 {
 
             .payment {
                
-                background-color: white !important;
+                background-color: #004c8c !important;
             }
 
             .pay {
                 
                 /* background-color: white; */
-                color: #004c8f;
+                color: #3bb161;
             }
             .pay10{
                 /* background: rgba(0, 0, 0, 0.1); */
@@ -227,13 +227,13 @@ h1 {
                 background-color: white;
                 border: none;
                
-                color: #004c8f;
+                color: #FFF;
             }
 
             .pay_tab li.active a {
               
                 background-color: white ;
-                color: #004c8f !important;
+                color: #FFF !important;
                 margin-top: 0px;
             }
 
@@ -270,12 +270,12 @@ h1 {
                 margin: 10px;
             } */
 
-            /* .new_customer {
+             .new_customer {
                
-                background-color: #1575ba !important;
+                background-color: #004c8c !important;
             }
 
-            .newcust_tab {
+            /*.newcust_tab {
                
                 background-color: #1575ba ;
             }
@@ -538,19 +538,19 @@ h1 {
             }
             
             .nav-tabs>li>a,.nav-tabs>li>a:focus {
-                border-radius: 0!important;
-                border-color: #C5D0DC;
-                background-color: #F9F9F9;
-                color: #999;
+                border-radius: 0.5rem 0.5rem 0rem 0rem!important;
+                border-color: #3bb161;
+                background-color: #004c8c ;
+                color: #FFF;
                 margin-right: -1px;
                 line-height: 18px;
                 position: relative
             }
             
             .nav-tabs>li>a:hover {
-                background-color: #FFF;
-                color: #4C8FBD;
-                border-color: #C5D0DC
+                background-color: #3BB161;
+                color: #FFF;
+                border-color: #3BB161
             }
             
             .nav-tabs>li>a:active,.nav-tabs>li>a:focus {
@@ -560,8 +560,8 @@ h1 {
             .nav-tabs>li.active>a,.nav-tabs>li.active>a:focus,.nav-tabs>li.active>a:hover {
                 color: #576373;
                 border-color: #C5D0DC #C5D0DC transparent;
-                border-top: 2px solid #4C8FBD;
-                background-color: #FFF;
+                /* border-top: 2px solid #4C8FBD; */
+                background-color: #3BB161;
                 z-index: 1;
                 line-height: 18px;
                 margin-top: -1px;
@@ -2463,17 +2463,17 @@ h1 {
             }
             
             .infobox-blue {
-                color: #003974;
-                border-color: #003974
+                color: #004c8c;
+                border-color: #004c8c
             }
             
             .infobox-blue>.infobox-icon>.ace-icon {
-                background-color: #003974
+                background-color: #004c8c
             }
             
             .infobox-blue.infobox-dark {
-                background-color: #003974;
-                border-color: #003974
+                background-color: #004c8c;
+                border-color: #004c8c
             }
             
             .infobox-blue2 {

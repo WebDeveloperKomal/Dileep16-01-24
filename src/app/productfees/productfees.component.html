@@ -1,29 +1,47 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb bg-white">
+    <li class="fw-bold">&#160;&#160;
+      <i class="fa-solid fa-house-chimney" style="margin-right: 10px; color: black;"></i><a href="/set/">Home&#160;</a>
+      <i class="fa-solid fa-chevron-right"></i>
+    </li>
+    <li class="fw-bold"><a href="">&#160;Settings&#160;</a>
+      <i class="fa-solid fa-chevron-right"></i>
+    </li>
+    <li class="active fw-bold" style="color: #3BB161;" aria-current="page">&#160;Product Fees</li>
+  </ol>
+</nav>
 <div class="container-fluid">
   <div class="row">
-    <div class="col">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <i class="ace-icon fa fa-home home-icon " style="margin-right: 10px;"></i><a href="#">Home</a>
-          </li>
-          <li class="breadcrumb-item"><a href="#">Settings</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Product Fees</li>
-        </ol>
-      </nav>
-      <div class="container ">
+    <div class="col pt-1">
+      <div class="container-fluid">
         <div class="row">
           <div class="col">
-            <div class="page-header">
-              <h1>
-                  Product Fees
-              </h1>
-            </div>
-            <div>
-              <button *ngIf="insertproductfees" type="button" routerLink="/set/add-productFees" class="btn btn-info" style="float: right;">Add
-                Product Fees</button>
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-xl-6 col-12 text-start">
+                <div class="page-header">
+                  <h1>
+                    Product Fees
+                  </h1>
+                </div>
               </div>
+
+              <div class="col-lg-6 col-12 text-end">
+                <div class="d-flex m-3">
+                  <p>
+                    <input class="w-100" type="text" [(ngModel)]="SearchText" (input)="applyFilter()"
+                      placeholder="search" style="border-radius: 2rem; padding: 5px 20px;"
+                      aria-controls="branch_datatable">
+                  </p>
+                  <div>
+                    <button *ngIf="insertproductfees" type="button" routerLink="/set/add-productFees" class="btn btn-info px-3"
+                    style="float: right;margin-left: 10px; border-radius: 2rem;">Add
+                      Product Fees</button>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div id="branch_datatable_wrapper" class="dataTables_wrapper no-footer">
-              <div class="row" style="margin-top: 7%;">
+              <div class="row">
                 <div class="col-lg-9 col-md-8">
                   <div class="dataTables_length" id="branch_datatable_length">
                     <p>Show
@@ -38,48 +56,43 @@
                     </p>
                   </div>
                 </div>
-                <div class="col-lg-3 col-md-3">
-                  <div class="dataTables_filter" id="branch_datatable_filter">
-                    <p>Search:
-                      <input type="text" [(ngModel)]="SearchText" (input)="applyFilter()" placeholder=""
-                        aria-controls="branch_datatable">
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
-            <table class="table table-bordered table-striped">
+            <table class="table ">
               <thead>
-                <tr>
-                  <th>Sr.No</th>
-                         <th>Product ID</th>
-                          <th>Product Name</th>
-                          <th>Product Range</th>
-                          <th>Branch Type</th>
-                          <th>Fees</th>
-                          <th *ngIf="view || updateproductfees || deleteproductfees">Action</th>
-                          
+                <tr class="text-center">
+                  <th class="p-3">Sr.No</th>
+                  <th class="p-3">Product ID</th>
+                  <th class="p-3">Product Name</th>
+                  <th class="p-3">Product Range</th>
+                  <th class="p-3">Branch Type</th>
+                  <th class="p-3">Fees</th>
+                  <th class="p-3" *ngIf="view || updateproductfees || deleteproductfees">Action</th>
                 </tr>
               </thead>
               <tbody>
-                <tr
-                *ngFor="let data of ProductFeeList  | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize,let index = index ">
-                <td>{{index+1}}</td>
-                <td>{{data.productId}}</td>
-                <td>{{data.productName}}</td>
-                <td>{{data.minValue}} - {{data.maxValue}}</td>
-                <td>{{data.areaType}}</td>
-                <td>{{data.fees}}</td>
+                <tr class="text-center"
+                  *ngFor="let data of ProductFeeList  | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize,let index = index ">
+                  <td>{{index+1}}</td>
+                  <td>{{data.productId}}</td>
+                  <td>{{data.productName}}</td>
+                  <td>{{data.minValue}} - {{data.maxValue}}</td>
+                  <td>{{data.areaType}}</td>
+                  <td>{{data.fees}}</td>
                   <td *ngIf="view || updateproductfees || deleteproductfees">
-                    <button *ngIf="updateproductfees" class="btn btn-xs" style="font-size: 13px; background-color:#003974!important; color: white;" (click)="edit(data.productFeeId)" >
-                        <i class="ace-icon fa fa-pencil bigger-120"></i>
+                    <button *ngIf="updateproductfees" class="btn btn-xs"
+                    style="font-size: 13px;border: 0; background-color: transparent;"
+                      (click)="edit(data.productFeeId)">
+                      <i class="fa-solid fa-pen-to-square fa-lg" style="color: #3BB161;"></i>
                     </button>&nbsp;&nbsp;
-                    <button *ngIf="deleteproductfees" class="btn btn-xs" style=" font-size: 13px; background-color:#DC3545!important; color: white;" (click)="delete(data.productFeeId)" >
-                    <!-- <i class="fa fa-trash"  aria-hidden="true"></i> -->
-                    <i class="fa-solid fa-trash-can"></i>
+                    <button *ngIf="deleteproductfees"
+                    style="font-size: 13px; color:#DC3545; border: 0; background-color: transparent;"
+                      (click)="delete(data.productFeeId)">
+                      <!-- <i class="fa fa-trash"  aria-hidden="true"></i> -->
+                      <i class="fa-solid fa-trash-can fa-lg"></i>
                     </button>
 
-                </td>
+                  </td>
                   <!-- <td></td> -->
                 </tr>
               </tbody>

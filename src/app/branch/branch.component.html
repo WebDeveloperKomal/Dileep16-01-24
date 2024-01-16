@@ -1,29 +1,36 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb bg-white">
+    <li class="fw-bold">&#160;&#160;
+      <i class="fa-solid fa-house-chimney" style="margin-right: 10px; color: black;"></i><a href="/set/">Home&#160;</a>
+      <i class="fa-solid fa-chevron-right"></i>
+    </li>
+    <li class="fw-bold"><a href="">&#160;Settings&#160;</a>
+      <i class="fa-solid fa-chevron-right"></i>
+    </li>
+    <li class="active fw-bold" style="color: #3BB161;" aria-current="page">&#160;Branch</li>
+  </ol>
+</nav>
 <div class="container-fluid">
   <div class="row">
-    <div class="col">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <i class="ace-icon fa fa-home home-icon " style="margin-right: 10px;"></i><a href="#">Home</a>
-          </li>
-          <li class="breadcrumb-item"><a href="#">Settings</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Branch</li>
-        </ol>
-      </nav>
-      <div class="container ">
+    <div class="col pt-1">
+      <div class="container-fluid">
+        <div class="page-header">
+          <div class="col text-start">
+            <h1>
+              Branch
+            </h1>
+          </div>
+          <p><input class="w-100" type="text" style="border-radius: 2rem; padding: 5px 20px;" [(ngModel)]="SearchText"
+              (input)="applyFilter()" placeholder="search" aria-controls="branch_datatable">
+          </p>
+          <button *ngIf="insertbranch" type="button" routerLink="/set/add-branch" class="btn-info px-3"
+            style="float: right;height: 40px; margin-left: 10px; border-radius: 2rem;">Add
+            Branch</button>
+        </div>
         <div class="row">
           <div class="col">
-            <div class="page-header">
-              <h1>
-                Branch
-              </h1>
-            </div>
-            <div>
-              <button *ngIf="insertbranch" type="button" routerLink="/set/add-branch" class="btn btn-info" style="float: right;">Add
-                Branch</button>
-              </div>
             <div id="branch_datatable_wrapper" class="dataTables_wrapper no-footer">
-              <div class="row" style="margin-top: 7%;">
+              <div class="row">
                 <div class="col-lg-9 col-md-8">
                   <div class="dataTables_length" id="branch_datatable_length">
                     <p>Show
@@ -38,61 +45,63 @@
                     </p>
                   </div>
                 </div>
-                <div class="col-lg-3 col-md-3">
-                  <div class="dataTables_filter" id="branch_datatable_filter">
-                    <p>Search:
-                      <input type="text" [(ngModel)]="SearchText" (input)="applyFilter()" placeholder=""
-                        aria-controls="branch_datatable">
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
-            <table class="table table-bordered table-striped">
+            <table class="table">
               <thead>
-                <tr>
-                  <th scope="col" width="5%" class="sorting_asc" tabindex="0" aria-controls="branch_datatable"
+                <tr class="text-center">
+                  <th scope="col" width="5%" class="sorting_asc p-3" tabindex="0" aria-controls="branch_datatable"
                     rowspan="1" colspan="1" aria-label="Sr.No.: activate to sort column descending" style="width: 60px;"
                     aria-sort="ascending">Sr.No.</th>
-                  <th scope="col" width="10%" class="sorting" tabindex="0" aria-controls="branch_datatable" rowspan="1"
-                    colspan="1" aria-label="Branch ID: activate to sort column ascending" style="width: 127px;">Branch
+                  <th scope="col" width="10%" class="sorting p-3" tabindex="0" aria-controls="branch_datatable"
+                    rowspan="1" colspan="1" aria-label="Branch ID: activate to sort column ascending"
+                    style="width: 127px;">Branch
                     ID</th>
-                  <th scope="col" width="10%" class="sorting" tabindex="0" aria-controls="branch_datatable" rowspan="1"
-                    colspan="1" aria-label="Branch Name: activate to sort column ascending" style="width: 138px;">Branch
+                  <th scope="col" width="10%" class="sorting p-3" tabindex="0" aria-controls="branch_datatable"
+                    rowspan="1" colspan="1" aria-label="Branch Name: activate to sort column ascending"
+                    style="width: 138px;">Branch
                     Name</th>
-                  <th scope="col" width="10%" class="sorting" tabindex="0" aria-controls="branch_datatable" rowspan="1"
-                    colspan="1" aria-label="Branch Code: activate to sort column ascending" style="width: 127px;">Branch
+                  <th scope="col" width="10%" class="sorting p-3" tabindex="0" aria-controls="branch_datatable"
+                    rowspan="1" colspan="1" aria-label="Branch Code: activate to sort column ascending"
+                    style="width: 127px;">Branch
                     Code</th>
-                  <th scope="col" width="10%" class="sorting" tabindex="0" aria-controls="branch_datatable" rowspan="1"
-                    colspan="1" aria-label="Branch City: activate to sort column ascending" style="width: 149px;">Branch
+                  <th scope="col" width="10%" class="sorting p-3" tabindex="0" aria-controls="branch_datatable"
+                    rowspan="1" colspan="1" aria-label="Branch City: activate to sort column ascending"
+                    style="width: 149px;">Branch
                     City</th>
-                  <th scope="col" width="29%" class="sorting" tabindex="0" aria-controls="branch_datatable" rowspan="1"
-                    colspan="1" aria-label="Branch Address: activate to sort column ascending" style="width: 394px;">
+                  <th scope="col" width="29%" class="sorting p-3" tabindex="0" aria-controls="branch_datatable"
+                    rowspan="1" colspan="1" aria-label="Branch Address: activate to sort column ascending"
+                    style="width: 394px;">
                     Branch Address</th>
-                    <th *ngIf="updatebranch || deletebranch" scope="col" width="10%" class="sorting" tabindex="0" aria-controls="branch_datatable" rowspan="1"
-                    colspan="1" aria-label="Branch Address: activate to sort column ascending" style="width: 149px;">
+                  <th *ngIf="updatebranch || deletebranch" scope="col" width="10%" class="sorting p-3" tabindex="0"
+                    aria-controls="branch_datatable" rowspan="1" colspan="1"
+                    aria-label="Branch Address: activate to sort column ascending" style="width: 100px;">
                     Action</th>
                 </tr>
               </thead>
               <tbody>
-                <tr
-                *ngFor="let data of branchList  | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize,let index = index ">
-                <td>{{index+1}}</td>
-                <td>{{data.branchId}}</td>
-                <td>{{data.branchName}}</td>
-                <td>{{data.branchCode}}</td>
-                <td>{{data.branchCity}}</td>
-                <td>{{data.branchAddress}}</td>
+                <tr class="text-center"
+                  *ngFor="let data of branchList  | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize,let index = index ">
+                  <td>{{index+1}}</td>
+                  <td>{{data.branchId}}</td>
+                  <td>{{data.branchName}}</td>
+                  <td>{{data.branchCode}}</td>
+                  <td>{{data.branchCity}}</td>
+                  <td>{{data.branchAddress}}</td>
                   <td *ngIf="updatebranch || deletebranch">
-                    <button *ngIf="updatebranch" class="btn btn-xs" style="font-size: 13px; background-color:#003974!important; color: white;" (click)="edit(data.branchId)" >
-                        <i class="ace-icon fa fa-pencil bigger-120"></i>
+                    <button *ngIf="updatebranch"
+                      style="font-size: 13px; border: 0; background-color: transparent;"
+                      (click)="edit(data.branchId)">
+                      <i class="fa-solid fa-pen-to-square fa-lg" style="color: #3BB161;"></i>
                     </button>&nbsp;&nbsp;
-                    <button *ngIf="deletebranch" class="btn btn-xs" style=" font-size: 13px; background-color:#DC3545!important; color: white;" (click)="delete(data.branchId)" >
-                    <!-- <i class="fa fa-trash"  aria-hidden="true"></i> -->
-                    <i class="fa-solid fa-trash-can"></i>
+                    <button *ngIf="deletebranch"
+                      style=" font-size: 13px; color:#DC3545;  border: 0; background-color: transparent;"
+                      (click)="delete(data.branchId)">
+                      <!-- <i class="fa fa-trash"  aria-hidden="true"></i> -->
+                      <i class="fa-solid fa-trash-can fa-lg"></i>
                     </button>
 
-                </td>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -103,7 +112,6 @@
                   pageSize}} of {{branchList.length}} entries </div>
                   <ngb-pagination [pageSize]="25" [collectionSize]="collectionSize" [(page)]="page"
                     aria-label="Default pagination"></ngb-pagination>
-
               </div>
             </div>
           </div>
